@@ -1,0 +1,109 @@
+<!-- col-xs-12 col-sm-3 col-md-3 col-lg-3 -->
+<div class="contenido-post">
+
+  <header-app></header-app>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 marginconten">
+      <section>
+
+        <article>
+            <ckeditor [config]="{extraPlugins: 'divarea'}" [(ngModel)]="content" debounce="500">
+                <p>Hello <strong>world</strong></p>
+              </ckeditor>
+
+        </article>
+
+        <article *ngFor="let item of objAllModel; let last = last">
+          <div class="row">
+            <div class="col-xs- imgpost">
+              <img src="http://systab.herokuapp.com/static/images/logo.png" alt="">
+            </div>
+            <div class="col-xs contpost">
+              <h2>
+                <a routerLink="/blog" title="{{item.title}}">
+                  {{item.title}}
+                </a>
+              </h2>
+              <div class="post-info">
+                <span class="author-info">
+                  <i class="icon-user"></i>
+                  <span class="vcard" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+                    <span class="fn">
+                      <a class="g-profile" href="https://plus.google.com/116842323872617754736" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+                        <span itemprop="name">{{item.user.first_name}} {{item.user.last_name}}</span>
+                      </a>
+                    </span>
+                  </span>
+                </span>
+                <span class="time-info">
+                  <i class="icon-clock"></i>
+                  <a class="timestamp-link" href="http://minima9.blogspot.mx/2015/03/moon-walker.html" rel="bookmark" title="permanent link">
+                    <abbr class="published updated timeago" title="22.48">{{item.fecha_registro}}</abbr>
+                  </a>
+                </span>
+                <span class="comment-info">
+                  <i class="icon-bubbles4"></i>
+                  <a href="http://minima9.blogspot.mx/2015/03/moon-walker.html#comment-form" onclick="">
+                    17 Comments
+                  </a>
+                </span>
+              </div>
+
+              <div class="post-body entry-content" id="post-body-58868674515854714">
+                <div class="contenidopost">
+                  Integer consequat leo sed ipsum faucibus convallis. Sed aliquam metus non turpis porta pellentesque nec in quam. Cum sociis
+                  natoque penati...
+                </div>
+                <a class="adreadmore" href="http://minima9.blogspot.mx/2015/03/the-evolution-of-startup-community.html#more" title="The Evolution of a Startup Community"> 
+                  Leer más 
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+
+
+        <!-- <article>
+          <div class="row">
+            <div class="col-xs">
+              <div class="container">
+                <div class="text-end">
+                  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setPage(1,pager.rango,pager.total)">Inicio</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                      <a (click)="setPage(pager.currentPage - 1,pager.rango,pager.total)">Anterior</a>
+                    </li>
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                      <a (click)="setPage(page,pager.rango,pager.total)">{{page}}</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setPage(pager.currentPage + 1,pager.rango,pager.total)">Siguiente</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                      <a (click)="setPage(pager.totalPages,pager.rango,pager.total)">Último</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article> -->
+
+
+
+      </section>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 marginconten">
+      <aside-app></aside-app>
+    </div>
+
+  </div>
+</div>
+
+<footer-app></footer-app>

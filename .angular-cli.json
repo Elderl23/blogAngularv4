@@ -19,7 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "assets/css/flexboxgridDevelopment.css",
+        "styles.css",
+        "assets/css/fonts/fonts.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

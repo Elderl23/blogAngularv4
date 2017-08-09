@@ -1,0 +1,53 @@
+
+              <aside>
+                <div class="border-aside">
+                  <h4>Categorías</h4>
+
+                  <div *ngFor="let item of categoriasObj; let last = last">
+                    <div class="asideclass">
+                      <div class="col-xs-12 col-sm-3 imgpostlis">
+                        <img src="http://systab.herokuapp.com/static/images/logo.png" alt="">
+                      </div>
+                      <div class="col-xs-12 col-sm-9 post-panel">
+                        <h3 class="rcp-title">
+                            <a [routerLink]="['/categorias/lista/', item.pk]">{{item.title}}</a>
+                          <!-- <a routerLink="post/categorias/{{item.pk}}/">{{item.title}}</a> -->
+                        </h3>
+                        <div class="datepostlis">
+                          <span class="icon-calendarc"><i class="icon-calendar"></i> 2015-03-13</span>
+                          <span class="icon-bubbles4c"><i class="icon-bubbles4"></i> Li Na Fen</span>
+                        </div>
+                      </div>
+                    </div>
+                    <hr *ngIf="!last">
+                </div>
+    
+                </div> 
+              </aside>
+    
+    
+    
+              <aside>
+                <div class="border-aside">
+                  <h4>Etiquetas</h4>
+
+                  <div *ngFor="let item of categoriasObj; let last = last">
+                    <div class="asideclass">
+                      <div class="col-xs-12 col-sm-3 imgpostlis">
+                        <img src="http://systab.herokuapp.com/static/images/logo.png" alt="">
+                      </div>
+                      <div class="col-xs-12 col-sm-9 post-panel">
+                        <h3 class="rcp-title">
+                            <a [routerLink]="['/etiquetas/lista/', item.pk]">{{item.title}}</a>
+                        </h3>
+                        <div class="datepostlis">
+                          <span class="icon-calendarc"><i class="icon-calendar"></i> 2015-03-13</span>
+                          <span class="icon-bubbles4c"><i class="icon-bubbles4"></i> Li Na Fen</span>
+                        </div>
+                      </div>
+                    </div>
+                    <hr *ngIf="!last">
+                </div>
+    
+                </div> 
+              </aside>
