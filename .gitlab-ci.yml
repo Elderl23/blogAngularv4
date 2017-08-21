@@ -1,0 +1,4 @@
+war:
+  stage: build
+  script:
+    - ng build --prod
