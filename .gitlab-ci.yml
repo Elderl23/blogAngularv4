@@ -1,4 +1,10 @@
-war:
-  stage: build
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+test_letslearn:
   script:
-    - ng build --prod
+    - npm install
+    - ./node_modules/@angular/cli/bin/ng test --single-run=true --browsers PhantomJS --watch=false
