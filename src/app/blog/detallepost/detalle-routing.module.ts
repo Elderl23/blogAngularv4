@@ -4,7 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DetalleComponent} from './detalle.component';
 
 const routes: Routes = [
-  { path: '', component: DetalleComponent }
+  { 
+    path: ':slug',
+    component: DetalleComponent 
+  }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);
+

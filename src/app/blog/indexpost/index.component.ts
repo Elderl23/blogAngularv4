@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Subscription } from "rxjs/Subscription";
 
 import { FooterModule } from '../footer/footer.module';
 
@@ -15,13 +17,15 @@ import { Post } from './post';
 
 })
 
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit, OnDestroy {
     errorMessage: String;
 
     objAllModel : Post[] = [];
 
     sampleContent = '';
     content = '';
+
+    private countdownEndRef: Subscription = null;
 
     constructor(
         private postService: PostService
@@ -35,11 +39,15 @@ export class IndexComponent implements OnInit {
     }
 
     fetchBooks(): void {
-        this.postService.getFunctionAll().subscribe(
+        this.countdownEndRef = this.postService.getFunctionAll().subscribe(
             data => this.objAllModel = data,
             error =>  this.errorMessage = <any>error
           );
     }
+
+    ngOnDestroy(){
+        this.countdownEndRef.unsubscribe();
+      }
 
 
 }

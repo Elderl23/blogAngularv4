@@ -21,7 +21,7 @@
             </div>
             <div class="col-xs contpost">
               <h2>
-                <a routerLink="/blog" title="{{item.title}}">
+                <a [routerLink]="['/blog',item.slug]"  title="{{item.title}}">
                   {{item.title}}
                 </a>
               </h2>
