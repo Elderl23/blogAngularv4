@@ -21,6 +21,8 @@ test:
   artifacts:
     paths:
     - dist/
+  only:
+  - master
 #deploy build production
 deploy:
   stage: deploy
@@ -30,3 +32,5 @@ deploy:
   artifacts:
     paths:
     - dist/
+  only:
+  - master
